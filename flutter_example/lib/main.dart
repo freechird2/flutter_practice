@@ -5,51 +5,126 @@ void main() {
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Study to Container')
+          title: Text('Widget을 상하좌우로 배치하기')
         ),
-        body: CumstomContainer()
-      )
+        body: Body(),
+      ),
     )
   );
 }
 
-class CumstomContainer extends StatelessWidget {
-  const CumstomContainer({super.key});
+class Body extends StatelessWidget {
+  const Body({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: 300,
-        height: 300,
-        padding: EdgeInsets.fromLTRB(10, 12, 10, 12),
-        // margin: EdgeInsets.symmetric(vertical: 12, horizontal: 10),
-        decoration: BoxDecoration(
-          color: Color(0xFF755F58),
-          border: Border.all(color: Colors.red, width: 5, style: BorderStyle.solid),
-          borderRadius: BorderRadius.circular(50),
-          boxShadow: [
-            BoxShadow(
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          Container(
+            color: Colors.grey,
+            width: 100,
+            height: 100,
+            margin: EdgeInsets.symmetric(horizontal: 8)
+          ),
+          Container(
               color: Colors.grey,
-              offset: Offset(6, 6),
-              blurRadius: 10,
-              spreadRadius: 10
-            ),
-            BoxShadow(
-                color: Colors.blue,
-                offset: Offset(-6, -6),
-                blurRadius: 10,
-                spreadRadius: 10
-            ),
-          ]
-        ),
-        child: Center(
-            child: Container(
-                color: Colors.yellow,
-                child: Text('Hello Container')
-            )
-        )
+              width: 100,
+              height: 100,
+              margin: EdgeInsets.symmetric(horizontal: 8)
+          ),
+          Container(
+              color: Colors.grey,
+              width: 100,
+              height: 100,
+              margin: EdgeInsets.symmetric(horizontal: 8)
+          ),
+          Container(
+              color: Colors.grey,
+              width: 100,
+              height: 100,
+              margin: EdgeInsets.symmetric(horizontal: 8)
+          ),
+          Container(
+              color: Colors.grey,
+              width: 100,
+              height: 100,
+              margin: EdgeInsets.symmetric(horizontal: 8)
+          ),
+          Container(
+              color: Colors.grey,
+              width: 100,
+              height: 100,
+              margin: EdgeInsets.symmetric(horizontal: 8)
+          ),
+          Container(
+              color: Colors.grey,
+              width: 100,
+              height: 100,
+              margin: EdgeInsets.symmetric(horizontal: 8)
+          ),
+          Container(
+              color: Colors.grey,
+              width: 100,
+              height: 100,
+              margin: EdgeInsets.symmetric(horizontal: 8)
+          ),
+          Container(
+              color: Colors.grey,
+              width: 100,
+              height: 100,
+              margin: EdgeInsets.symmetric(horizontal: 8)
+          ),
+          Container(
+              color: Colors.grey,
+              width: 100,
+              height: 100,
+              margin: EdgeInsets.symmetric(horizontal: 8)
+          ),
+        ],
       ),
     );
+    // return Container(
+    //   color: Colors.amber,
+    //   width: 100,
+    //   child: Column(
+    //     mainAxisAlignment: MainAxisAlignment.end,
+    //     crossAxisAlignment: CrossAxisAlignment.end,
+    //     children: [
+    //       Row(
+    //         mainAxisSize: MainAxisSize.max,
+    //         mainAxisAlignment: MainAxisAlignment.end,
+    //         crossAxisAlignment: CrossAxisAlignment.center,
+    //         children: [
+    //           Container(
+    //             width: 100,
+    //             height: 80,
+    //             color: Colors.red,
+    //             child: Text('Container1'),
+    //           ),
+    //           Container(
+    //             width: 100,
+    //             height: 80,
+    //             color: Colors.blue,
+    //             child: Text('Container2'),
+    //           ),
+    //           Container(
+    //             width: 100,
+    //             height: 80,
+    //             color: Colors.green,
+    //             child: Text('Container3'),
+    //           )
+    //         ],
+    //       ),
+    //       Container(
+    //         width: 300,
+    //         height: 120,
+    //         color: Colors.grey,
+    //         child: Text('Container4'),
+    //       )
+    //     ]
+    //   ),
+    // );
   }
 }
