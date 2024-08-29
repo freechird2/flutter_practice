@@ -1,111 +1,50 @@
+import 'dart:ffi';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
     MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Widget을 상하로 배치하기')
-        ),
-        body: Body(),
-      ),
+      home: HomeWidget(),
     )
   );
 }
 
-class Body extends StatelessWidget {
-  const Body({super.key});
+class HomeWidget extends StatelessWidget {
+  const HomeWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal: 8),
-          ),
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal: 8),
-          ),
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal: 8),
-          ),
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal: 8),
-          ),
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal: 8),
-          ),
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal: 8),
-          ),
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal: 8),
-          ),
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal: 8),
-          ),
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal: 8),
-          ),
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal: 8),
-          ),
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal: 8),
-          ),
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal: 8),
-          ),
-          Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal: 8),
-          ),
-
-        ],
-      ),
+    return const SafeArea(
+        child: Scaffold(
+          body: ConstraintsWidget(),
+        )
     );
   }
 }
+
+class ConstraintsWidget extends StatelessWidget {
+  const ConstraintsWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Flexible(
+          child: Container(
+              color: Colors.blue,
+              child: Text('Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! ', style: TextStyle(fontSize: 30),)
+          ),
+        ),
+        Flexible(
+          child: Container(
+              color: Colors.red,
+              child: Text('Hello world!', style: TextStyle(fontSize: 30))
+          ),
+        )
+      ],
+    );
+  }
+}
+
